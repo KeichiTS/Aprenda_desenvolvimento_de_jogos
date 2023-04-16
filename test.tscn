@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwu3cs0hr34mj"]
+
+[ext_resource type="Texture2D" uid="uid://b24bqplauin5b" path="res://assets/enemy/whale/attack.png" id="1_0h1av"]
+
+[node name="Attack" type="Sprite2D"]
+position = Vector2(126, 86)
+texture = ExtResource("1_0h1av")
