@@ -1,12 +1,15 @@
 extends Node2D
 class_name player
 
-var space = '  '
-var hello = 'Hello!'
-var player_name = 'Davi'
+var enemy_health: int = 5
 
-func _physics_process(delta):
-	pass
+var bonus_attack: int = 2 
+var base_attack: int = 3
 	
 func _ready():
-	print(hello + " " + player_name)
+	if base_attack + bonus_attack  >= enemy_health:
+		print('Matou o inimigo.')
+	elif base_attack + bonus_attack >= 3:
+		print('Inimigo tomou 60% da vida em dano.')
+	else:
+		print('Inimigo sobreviveu ao ataque')
