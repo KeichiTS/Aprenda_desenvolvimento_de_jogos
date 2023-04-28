@@ -1,15 +1,12 @@
 extends Node2D
 class_name player
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var space = '  '
+var hello = 'Hello!'
+var player_name = 'Davi'
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	print(delta)
-
-func test():
-	
+func _physics_process(delta):
 	pass
+	
+func _ready():
+	print(hello + " " + player_name)
