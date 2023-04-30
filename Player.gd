@@ -6,18 +6,19 @@ var enemy_health: int = 5
 var bonus_attack: int = 2 
 var base_attack: int = 3
 
-var can_attack: bool = true
+var can_attack: bool = false
 	
 func _ready():
-	if can_attack == true:
-		update_enemy_health()
-	else: 
-		print('Personagem impossibilitado de atacar')
+	print(update_enemy_health())
 
-func update_enemy_health() -> void:
-	if base_attack + bonus_attack  >= enemy_health:
-		print('Matou o inimigo.')
-	elif base_attack + bonus_attack >= 3:
-		print('Inimigo tomou 60% da vida em dano.')
-	else:
-		print('Inimigo sobreviveu ao ataque')
+
+func update_enemy_health() -> String:
+	if can_attack == true:
+		if base_attack + bonus_attack  >= enemy_health:
+			return 'Matou o inimigo.'
+		elif base_attack + bonus_attack >= 3:
+			return 'Inimigo tomou 60% da vida em dano.'
+		else:
+			return 'Inimigo sobreviveu ao ataque'
+	else: 
+		return 'Personagem impossibilitado de atacar'
