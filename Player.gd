@@ -1,13 +1,10 @@
 extends Node2D
 class_name player
 
-var lista_de_produtos: Array = [
-	['Maçã', 10, 0.50],
-	['Banana', 12, 0.25],
-	['Laranja', 6, 0.35]
-]
+var i: int = 0
 
 func _ready():
-	for produto in lista_de_produtos:
-		for informacao in produto:
-			print(informacao)
+	while i < 1000:
+		print(i)
+		i += 1 
+	print('While finalizou')
