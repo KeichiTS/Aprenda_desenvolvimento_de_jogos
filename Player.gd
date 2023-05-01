@@ -1,10 +1,8 @@
 extends Node2D
 class_name player
 
-var i: int = 0
+@export_range(0,100,5) var number: int = 0 
+@export_multiline var dialog_text : String
 
 func _ready():
-	while i < 1000:
-		print(i)
-		i += 1 
-	print('While finalizou')
+	print(number)
