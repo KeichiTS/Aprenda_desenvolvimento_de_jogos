@@ -6,3 +6,7 @@ class_name player
 func _ready():
 	#print(sprite)
 	pass
+
+
+func _on_visibility_changed():
+	pass # Replace with function body.
