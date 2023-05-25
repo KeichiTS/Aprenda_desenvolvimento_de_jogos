@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxtyds6ahei6l"]
+[gd_scene load_steps=6 format=3 uid="uid://cxtyds6ahei6l"]
 
 [ext_resource type="TileSet" uid="uid://bhq8h1ghp0o7w" path="res://resources/floor.tres" id="1_yxshj"]
 [ext_resource type="TileSet" uid="uid://sabntekrsgho" path="res://resources/normal_decoration_tile.tres" id="2_jl3f0"]
 [ext_resource type="TileSet" uid="uid://b0de1if0vxtlm" path="res://resources/small_decoration_tile.tres" id="3_nky7w"]
 [ext_resource type="PackedScene" uid="uid://hvch88bxgtko" path="res://scenes/background.tscn" id="4_84662"]
+[ext_resource type="PackedScene" uid="uid://bwyxgyphl1mx5" path="res://scenes/env/mask.tscn" id="5_k15c3"]
 
 [node name="Level" type="Node2D"]
 
@@ -24,4 +25,6 @@ tile_set = ExtResource("3_nky7w")
 format = 2
 layer_0/tile_data = PackedInt32Array(393217, 1, 0, 393218, 2, 0, 393219, 0, 0, 393225, 0, 0, 393222, 1, 0, 393233, 0, 0, 393229, 0, 0, 393224, 2, 0)
 
-[node name="Background" parent="LevelDesign/SmallDecorationTile" instance=ExtResource("4_84662")]
+[node name="Background" parent="." instance=ExtResource("4_84662")]
+
+[node name="Mask" parent="." instance=ExtResource("5_k15c3")]
