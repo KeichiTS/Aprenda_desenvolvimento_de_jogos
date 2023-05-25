@@ -10,9 +10,11 @@ texture = ExtResource("1_hgjjr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nagyy"]
 texture = ExtResource("2_wxey6")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m12ng"]
 texture = ExtResource("3_lgykj")
+0:0/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_ci8lj")
