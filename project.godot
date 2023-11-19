@@ -11,5 +11,18 @@ config_version=5
 [application]
 
 config/name="Do Básico ao Avançado no Desenvolvimento de Jogos."
+run/main_scene="res://scenes/env/background.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/mode=2
+window/size/initial_position_type=0
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
