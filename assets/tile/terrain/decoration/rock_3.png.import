@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4miapem5x4bw"
-path="res://.godot/imported/lamp.png-2ecbbeb6128a067e65542185ecd124ae.ctex"
+uid="uid://brlijj07e5t8s"
+path="res://.godot/imported/rock_3.png-2165450bc89620c010f11f9594c81a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile/decoration/lamp.png"
-dest_files=["res://.godot/imported/lamp.png-2ecbbeb6128a067e65542185ecd124ae.ctex"]
+source_file="res://assets/tile/terrain/decoration/rock_3.png"
+dest_files=["res://.godot/imported/rock_3.png-2165450bc89620c010f11f9594c81a85.ctex"]
 
 [params]
 

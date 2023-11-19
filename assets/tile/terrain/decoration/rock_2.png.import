@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dupg6omckkq05"
-path="res://.godot/imported/fence_2.png-e6cc031e10bdf9c617434f61f30f6687.ctex"
+uid="uid://ccglgtfr6a0il"
+path="res://.godot/imported/rock_2.png-b5cecedb77b1df1755c317e8040d79ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile/decoration/fence_2.png"
-dest_files=["res://.godot/imported/fence_2.png-e6cc031e10bdf9c617434f61f30f6687.ctex"]
+source_file="res://assets/tile/terrain/decoration/rock_2.png"
+dest_files=["res://.godot/imported/rock_2.png-b5cecedb77b1df1755c317e8040d79ae.ctex"]
 
 [params]
 

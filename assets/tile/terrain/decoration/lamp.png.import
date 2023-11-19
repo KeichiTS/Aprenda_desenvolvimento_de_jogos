@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lk1wh4jskspp"
-path="res://.godot/imported/grass_1.png-f1c37bc3845befbfe483b8774bd09a22.ctex"
+uid="uid://d4miapem5x4bw"
+path="res://.godot/imported/lamp.png-0edf51621292caa84c53af4582757664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile/decoration/grass_1.png"
-dest_files=["res://.godot/imported/grass_1.png-f1c37bc3845befbfe483b8774bd09a22.ctex"]
+source_file="res://assets/tile/terrain/decoration/lamp.png"
+dest_files=["res://.godot/imported/lamp.png-0edf51621292caa84c53af4582757664.ctex"]
 
 [params]
 
