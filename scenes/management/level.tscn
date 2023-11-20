@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5wujuk5uggi4"]
+
+[ext_resource type="TileSet" uid="uid://8qc1fc87x204" path="res://resources/floor .tres" id="1_itl68"]
+[ext_resource type="TileSet" uid="uid://rjjjogl5ww8f" path="res://resources/grass.tres" id="2_xkds0"]
+[ext_resource type="PackedScene" uid="uid://cqhomu1cdvti8" path="res://scenes/env/background.tscn" id="3_f8y42"]
+[ext_resource type="PackedScene" uid="uid://k0a53wkx6wrf" path="res://scenes/env/mask.tscn" id="4_1iwcu"]
+[ext_resource type="PackedScene" uid="uid://67cf7xjjpxtb" path="res://scenes/player/player.tscn" id="5_vk8xi"]
+
+[node name="Level" type="Node2D"]
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="LevelDesign"]
+tile_set = ExtResource("1_itl68")
+format = 2
+layer_0/tile_data = PackedInt32Array(327689, 65545, 2, 327688, 65545, 2, 327687, 65545, 2, 327686, 65545, 2, 327685, 65545, 2, 327684, 65545, 2, 327683, 65545, 2, 327682, 65545, 2, 327681, 65545, 2, 327680, 65545, 2, 393215, 9, 2, 262153, 65545, 1, 262152, 65545, 1, 262151, 65545, 1, 262150, 65545, 1, 262149, 65545, 1, 262148, 65545, 1, 262147, 65545, 1, 262146, 65545, 1, 262145, 65545, 1, 262144, 65545, 1, 327679, 9, 1, 196618, 131081, 0, 196617, 65545, 0, 196616, 65545, 0, 196615, 65545, 0, 196614, 65545, 0, 196613, 65545, 0, 196612, 65545, 0, 196611, 65545, 0, 196610, 65545, 0, 196609, 65545, 0, 196608, 65545, 0, 262143, 9, 0, 327690, 131081, 2, 262154, 131081, 1, 131074, 0, 0, 131076, 0, 0, 131078, 0, 0, 131079, 5, 0, 131081, 5, 0, 131072, 5, 0)
+
+[node name="Grass" type="TileMap" parent="LevelDesign"]
+tile_set = ExtResource("2_xkds0")
+format = 2
+layer_0/tile_data = PackedInt32Array(327697, 1, 0, 327695, 1, 0, 327688, 1, 0, 327681, 1, 0, 327685, 1, 0, 393214, 1, 0)
+
+[node name="Background" parent="." instance=ExtResource("3_f8y42")]
+
+[node name="Mask2" parent="." instance=ExtResource("4_1iwcu")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("5_vk8xi")]
+position = Vector2(66, 47)

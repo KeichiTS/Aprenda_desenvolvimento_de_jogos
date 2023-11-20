@@ -6,7 +6,6 @@ class_name PlayerTexture
 @onready var animation: AnimationPlayer = get_node(animation_path)
 
 func animate(direction: Vector2) -> void:
-	print(get_node(animation_path))
 	verify_position(direction)
 	horizontal_behavior(direction)
 
