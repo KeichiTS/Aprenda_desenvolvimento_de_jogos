@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://67cf7xjjpxtb"]
+
+[ext_resource type="Texture2D" uid="uid://cka3o3w4amxnd" path="res://assets/player/char_red.png" id="1_f1dgc"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_f1dgc")
+hframes = 8
+vframes = 11
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Texture")
+
+[node name="LevelCamera" type="Camera2D" parent="."]
