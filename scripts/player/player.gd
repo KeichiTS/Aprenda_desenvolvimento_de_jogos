@@ -7,6 +7,7 @@ class_name Player
 func _physics_process(delta: float):
 	horizontal_movement_env()
 	move_and_slide()
+	player_sprite.animate(velocity)
 
 func horizontal_movement_env() -> void:
 	var input_direction : float = Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left')
