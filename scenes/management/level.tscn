@@ -27,3 +27,5 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("5_vk8xi")]
 position = Vector2(66, 47)
+speed = 100
+player_gravity = 600

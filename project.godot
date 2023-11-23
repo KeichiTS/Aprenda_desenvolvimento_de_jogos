@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Do Básico ao Avançado no Desenvolvimento de Jogos."
-run/main_scene="res://scenes/env/background.tscn"
+run/main_scene="res://scenes/management/level.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
