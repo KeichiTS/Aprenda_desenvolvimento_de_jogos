@@ -351,8 +351,11 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_psm1g")
 speed = 75
-jump_speed = -175
+jump_speed = -150
+wall_jump_speed = -250
+wall_gravity = 115
 player_gravity = 350
+wall_impulse_speed = 300
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_f1dgc")
@@ -386,6 +389,6 @@ shape = SubResource("RectangleShape2D_mdgn6")
 disabled = true
 
 [node name="WallRay" type="RayCast2D" parent="."]
-target_position = Vector2(10.4, 0)
+target_position = Vector2(10.5, 0)
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
