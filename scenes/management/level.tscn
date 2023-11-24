@@ -23,7 +23,6 @@ layer_0/tile_data = PackedInt32Array(327697, 1, 0, 327695, 1, 0, 327688, 1, 0, 3
 [node name="Background" parent="." instance=ExtResource("3_f8y42")]
 
 [node name="Mask2" parent="." instance=ExtResource("4_1iwcu")]
-visible = false
 
 [node name="Player" parent="." instance=ExtResource("5_vk8xi")]
 position = Vector2(66, 47)
