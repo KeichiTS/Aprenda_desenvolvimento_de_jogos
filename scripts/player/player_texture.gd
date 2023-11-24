@@ -38,8 +38,10 @@ func action_behavior() -> void:
 		animation.play('attack' + suffix)
 	elif player.defending and shield_off:
 		animation.play('shield')
+		shield_off = false 
 	elif player.crouching and crouching_off:
 		animation.play('crouch')
+		crouching_off = false 
 
 		
 func vertical_behavior(direction : Vector2) -> void:
