@@ -417,7 +417,7 @@ speed = 75
 jump_speed = -150
 wall_jump_speed = -250
 wall_gravity = 115
-player_gravity = 350
+player_gravity = 400
 wall_impulse_speed = 300
 
 [node name="Texture" type="Sprite2D" parent="."]
@@ -455,6 +455,7 @@ disabled = true
 target_position = Vector2(10.5, 0)
 
 [node name="Light" type="PointLight2D" parent="."]
+color = Color(1, 1, 2, 0.99)
 energy = 0.8
 texture = ExtResource("4_ffa67")
 texture_scale = 0.3

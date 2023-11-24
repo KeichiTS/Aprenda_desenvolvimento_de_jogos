@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5wujuk5uggi4"]
+[gd_scene load_steps=7 format=3 uid="uid://c5wujuk5uggi4"]
 
 [ext_resource type="TileSet" uid="uid://8qc1fc87x204" path="res://resources/floor .tres" id="1_itl68"]
 [ext_resource type="TileSet" uid="uid://rjjjogl5ww8f" path="res://resources/grass.tres" id="2_xkds0"]
 [ext_resource type="PackedScene" uid="uid://cqhomu1cdvti8" path="res://scenes/env/background.tscn" id="3_f8y42"]
 [ext_resource type="PackedScene" uid="uid://k0a53wkx6wrf" path="res://scenes/env/mask.tscn" id="4_1iwcu"]
 [ext_resource type="PackedScene" uid="uid://67cf7xjjpxtb" path="res://scenes/player/player.tscn" id="5_vk8xi"]
+
+[sub_resource type="Environment" id="Environment_nx56i"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 1.5
 
 [node name="Level" type="Node2D"]
 
@@ -28,3 +33,6 @@ layer_0/tile_data = PackedInt32Array(327697, 1, 0, 327695, 1, 0, 327688, 1, 0, 3
 position = Vector2(66, 47)
 speed = 100
 player_gravity = 600
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nx56i")
