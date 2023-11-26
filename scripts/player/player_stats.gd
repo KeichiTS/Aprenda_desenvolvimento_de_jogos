@@ -1,6 +1,8 @@
 extends Node
 class_name PlayerStats
 
+@export var invencibility_timer_path : NodePath
+@onready var invencibility_timer : Timer = get_node(invencibility_timer_path)
 var shielding: bool = false
 
 var base_health: int = 15
@@ -38,6 +40,9 @@ var level_dict: Dictionary = {
 
 @export var player_path : NodePath
 @onready var player : CharacterBody2D = get_node(player_path)
+@export var collision_area_path : NodePath
+@onready var collision_area : Area2D = get_node(collision_area_path)
+
 func _ready() -> void:
 	current_mana = base_mana + bonus_mana
 	max_mana = current_mana
@@ -97,3 +102,15 @@ func update_mana(type: String, value : int) -> void:
 func _process(delta) -> void:
 	if Input.is_action_just_pressed('ui_select'):
 		update_health('Decrease', 5)
+
+
+func on_collision_area_entered(area):
+	if area.name == 'EnemyAttackArea':
+		update_health('Decrease', area.damage)
+		collision_area.set_deferred('monitoring', false)
+		#aqui precisa ver se está funcionando quando tiver os inimigos
+		invencibility_timer.start(area.invencibility_timer )
+
+func on_invencibility_timer_timeout() -> void:
+	collision_area.set_deferred('monitoring', true)
+	

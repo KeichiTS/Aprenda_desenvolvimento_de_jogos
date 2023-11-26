@@ -109,3 +109,5 @@ func defense() -> void:
 		can_track_input = true 
 		stats.shielding = false 
 		player_sprite.shield_off = true 
+
+

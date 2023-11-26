@@ -506,4 +506,15 @@ libraries = {
 script = ExtResource("5_b2uxy")
 player_path = NodePath("..")
 
+[node name="InvencibilityTimer" type="Timer" parent="Stats"]
+one_shot = true
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(-1.5, 12.5)
+shape = SubResource("RectangleShape2D_rcgc2")
+
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
+[connection signal="timeout" from="Stats/InvencibilityTimer" to="Stats" method="on_invencibility_timer_timeout"]
+[connection signal="area_entered" from="CollisionArea" to="Stats" method="on_collision_area_entered"]
