@@ -8,13 +8,20 @@ var crouching_off: bool = false
 
 @export var animation_path : NodePath
 @export var player_path : NodePath
+@export var attack_collision_path : NodePath
+@onready var attack_collision : CollisionShape2D = get_node(attack_collision_path)
 @onready var animation: AnimationPlayer = get_node(animation_path)
 @onready var player: CharacterBody2D = get_node(player_path)
+
+
 
 func animate(direction: Vector2) -> void:
 	verify_position(direction)
 	
-	if player.attacking or player.defending or player.crouching or player.next_to_wall():
+	
+	if player.on_hit or player.dead:
+		hit_behavior()
+	elif player.attacking or player.defending or player.crouching or player.next_to_wall():
 		action_behavior()
 	
 	elif direction.y != 0: 
@@ -24,6 +31,14 @@ func animate(direction: Vector2) -> void:
 		player.set_physics_process(false)
 	else:
 		horizontal_behavior(direction)
+
+func hit_behavior() -> void:
+	player.set_physics_process(false)
+	attack_collision.set_deferred('disabled', true)
+	if player.dead:
+		animation.play('dead')
+	elif player.on_hit:
+		animation.play('hit')
 
 func verify_position(direction : Vector2) -> void:
 	if direction.x > 0:
@@ -77,3 +92,12 @@ func on_animation_finished(anim_name: String):
 		'attack_right':
 			normal_attack = false 
 			player.attacking = false 
+
+		'hit':
+			player.on_hit = false 
+			player.set_physics_process(true)
+			
+			if player.defending:
+				animation.play('shield')
+			if player.crouching:
+				animation.play('crouch')

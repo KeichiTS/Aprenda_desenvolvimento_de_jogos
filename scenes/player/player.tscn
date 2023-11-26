@@ -219,6 +219,22 @@ tracks/0/keys = {
 "values": [71, 72, 73]
 }
 
+[sub_resource type="Animation" id="Animation_bk32s"]
+resource_name = "dead"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53, 54, 55, 59]
+}
+
 [sub_resource type="Animation" id="Animation_ebqxj"]
 resource_name = "fall"
 length = 0.4
@@ -234,6 +250,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [33, 34, 35, 36]
+}
+
+[sub_resource type="Animation" id="Animation_8iv3l"]
+resource_name = "hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 42, 43]
 }
 
 [sub_resource type="Animation" id="Animation_sw6c8"]
@@ -335,38 +367,6 @@ tracks/0/keys = {
 "values": [85, 86]
 }
 
-[sub_resource type="Animation" id="Animation_8iv3l"]
-resource_name = "hit"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [40, 41, 42, 43]
-}
-
-[sub_resource type="Animation" id="Animation_bk32s"]
-resource_name = "dead"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [48, 49, 50, 51, 52, 53, 54, 55, 59]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_15q3e"]
 _data = {
 "RESET": SubResource("Animation_jv4tu"),
@@ -462,6 +462,7 @@ vframes = 11
 script = ExtResource("3_6gmd5")
 animation_path = NodePath("../Animation")
 player_path = NodePath("..")
+attack_collision_path = NodePath("../AttackArea/Collision")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
