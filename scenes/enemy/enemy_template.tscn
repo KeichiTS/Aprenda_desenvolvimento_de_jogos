@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bcy8y1he7o1w5"]
+[gd_scene load_steps=2 format=3 uid="uid://bcy8y1he7o1w5"]
+
+[ext_resource type="Script" path="res://scripts/enemy/detection_area.gd" id="1_6qtlf"]
 
 [node name="EnemyTemplate" type="CharacterBody2D"]
 
@@ -7,6 +9,7 @@
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="DetectionArea" type="Area2D" parent="."]
+script = ExtResource("1_6qtlf")
 
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
 
@@ -21,3 +24,6 @@
 [node name="Animation" type="AnimationPlayer" parent="."]
 
 [node name="FloorRay" type="RayCast2D" parent="."]
+
+[connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="on_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="DetectionArea" method="on_body_exited"]
