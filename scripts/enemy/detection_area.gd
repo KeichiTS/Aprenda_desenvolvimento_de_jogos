@@ -11,4 +11,3 @@ func on_body_entered(body: Player) -> void :
 
 func on_body_exited(_body: Player) -> void:
 	enemy.player_ref = null
-	pass # Replace with function body.
