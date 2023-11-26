@@ -19,11 +19,14 @@ var player_ref : Player = null
 @export var speed : int
 @export var gravity_speed : int
 @export var proximity_threshhold : int 
+@export var raycast_default_position : int 
 
 func _physics_process(delta : float) -> void:
 	gravity(delta)
 	move_behavior()
-
+	verify_position()
+	#texture.animate(velocity)
+	move_and_slide()
 
 func gravity(delta : float) -> void:
 	velocity.y += delta * gravity_speed
@@ -49,3 +52,15 @@ func floor_collision() -> bool:
 		return true
 		
 	return false
+
+
+func verify_position() -> void:
+	if player_ref != null:
+		var direction : float = sign(player_ref.global_position.x - global_position.x)
+		
+		if direction > 0:
+			texture.flip_h = true
+			floor_ray.x = abs(raycast_default_position)
+		elif direction < 0:
+			texture.flip_h = false 
+			floor_ray.position.x = raycast_default_position
