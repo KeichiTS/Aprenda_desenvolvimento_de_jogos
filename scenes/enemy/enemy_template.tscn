@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcy8y1he7o1w5"]
+[gd_scene load_steps=3 format=3 uid="uid://bcy8y1he7o1w5"]
 
 [ext_resource type="Script" path="res://scripts/enemy/detection_area.gd" id="1_6qtlf"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_template.gd" id="1_ggmpi"]
 
 [node name="EnemyTemplate" type="CharacterBody2D"]
+script = ExtResource("1_ggmpi")
 
 [node name="Texture" type="Sprite2D" parent="."]
 
