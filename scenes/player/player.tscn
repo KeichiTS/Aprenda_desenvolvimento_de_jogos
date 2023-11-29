@@ -457,14 +457,14 @@ wall_gravity = 115
 player_gravity = 400
 wall_impulse_speed = 300
 
-[node name="Texture" type="Sprite2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="." node_paths=PackedStringArray("animation", "player", "attack_collision")]
 texture = ExtResource("1_f1dgc")
 hframes = 8
 vframes = 11
 script = ExtResource("3_6gmd5")
-animation_path = NodePath("../Animation")
-player_path = NodePath("..")
-attack_collision_path = NodePath("../AttackArea/Collision")
+animation = NodePath("../Animation")
+player = NodePath("..")
+attack_collision = NodePath("../AttackArea/Collision")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
@@ -507,8 +507,9 @@ libraries = {
 "": SubResource("AnimationLibrary_s50hm")
 }
 
-[node name="Stats" type="Node" parent="."]
+[node name="Stats" type="Node" parent="." node_paths=PackedStringArray("invencibility_timer")]
 script = ExtResource("5_b2uxy")
+invencibility_timer = NodePath("InvencibilityTimer")
 player_path = NodePath("..")
 
 [node name="InvencibilityTimer" type="Timer" parent="Stats"]

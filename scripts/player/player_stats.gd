@@ -1,8 +1,7 @@
 extends Node
 class_name PlayerStats
 
-@export var invencibility_timer_path : NodePath
-@onready var invencibility_timer : Timer = get_node(invencibility_timer_path)
+@export var invencibility_timer : Timer
 var shielding: bool = false
 
 var base_health: int = 15

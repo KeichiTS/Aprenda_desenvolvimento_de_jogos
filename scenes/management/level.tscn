@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5wujuk5uggi4"]
+[gd_scene load_steps=9 format=3 uid="uid://c5wujuk5uggi4"]
 
 [ext_resource type="Script" path="res://scripts/managements/level.gd" id="1_0ep3i"]
 [ext_resource type="TileSet" uid="uid://8qc1fc87x204" path="res://resources/floor .tres" id="1_itl68"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqhomu1cdvti8" path="res://scenes/env/background.tscn" id="3_f8y42"]
 [ext_resource type="PackedScene" uid="uid://k0a53wkx6wrf" path="res://scenes/env/mask.tscn" id="4_1iwcu"]
 [ext_resource type="PackedScene" uid="uid://67cf7xjjpxtb" path="res://scenes/player/player.tscn" id="5_vk8xi"]
+[ext_resource type="PackedScene" uid="uid://squehr6q680p" path="res://scenes/enemy/whale.tscn" id="7_mybae"]
 
 [sub_resource type="Environment" id="Environment_nx56i"]
 background_mode = 3
@@ -30,6 +31,7 @@ layer_0/tile_data = PackedInt32Array(327697, 1, 0, 327695, 1, 0, 327688, 1, 0, 3
 [node name="Background" parent="." instance=ExtResource("3_f8y42")]
 
 [node name="Mask2" parent="." instance=ExtResource("4_1iwcu")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("5_vk8xi")]
 position = Vector2(66, 47)
@@ -38,3 +40,8 @@ player_gravity = 600
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nx56i")
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Whale" parent="Enemy" instance=ExtResource("7_mybae")]
+position = Vector2(272, 46)

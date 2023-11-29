@@ -8,12 +8,12 @@ var normal_attack: bool = false
 var shield_off: bool = false
 var crouching_off: bool = false 
 
-@export var animation_path : NodePath
-@export var player_path : NodePath
-@export var attack_collision_path : NodePath
-@onready var attack_collision : CollisionShape2D = get_node(attack_collision_path)
-@onready var animation: AnimationPlayer = get_node(animation_path)
-@onready var player: CharacterBody2D = get_node(player_path)
+@export var animation : AnimationPlayer
+@export var player : CharacterBody2D
+@export var attack_collision : CollisionShape2D
+#@onready var attack_collision : CollisionShape2D = get_node(attack_collision_path)
+#@onready var animation: AnimationPlayer = get_node(animation_path)
+#@onready var player: CharacterBody2D = get_node(player_path)
 
 
 
