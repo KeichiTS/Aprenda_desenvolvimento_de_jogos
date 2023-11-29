@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcy8y1he7o1w5"]
+[gd_scene load_steps=4 format=3 uid="uid://bcy8y1he7o1w5"]
 
 [ext_resource type="Script" path="res://scripts/enemy/detection_area.gd" id="1_6qtlf"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_template.gd" id="1_ggmpi"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_texture.gd" id="2_6lvfh"]
 
 [node name="EnemyTemplate" type="CharacterBody2D"]
 script = ExtResource("1_ggmpi")
 
 [node name="Texture" type="Sprite2D" parent="."]
+script = ExtResource("2_6lvfh")
+attack_area_collision_path = NodePath("../AttackArea/Collision")
+animation_path = NodePath("../Animation")
+enemy_path = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
@@ -30,3 +35,4 @@ enemy_path = NodePath("..")
 
 [connection signal="body_entered" from="DetectionArea" to="DetectionArea" method="on_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="DetectionArea" method="on_body_exited"]
+[connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
