@@ -493,6 +493,7 @@ disabled = true
 
 [node name="WallRay" type="RayCast2D" parent="."]
 target_position = Vector2(10.5, 0)
+collision_mask = 3
 
 [node name="Light" type="PointLight2D" parent="."]
 color = Color(1, 1, 2, 0.99)
