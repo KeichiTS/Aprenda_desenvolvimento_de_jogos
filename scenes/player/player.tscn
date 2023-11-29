@@ -447,6 +447,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_psm1g")
 speed = 75
 jump_speed = -150
@@ -481,6 +483,8 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-0.5, 5.5)
@@ -510,6 +514,8 @@ player_path = NodePath("..")
 one_shot = true
 
 [node name="CollisionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2(-1.5, 12.5)

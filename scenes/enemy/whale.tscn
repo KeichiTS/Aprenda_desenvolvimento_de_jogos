@@ -203,9 +203,6 @@ visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_8nidb")
 
-[node name="DetectionArea" parent="." index="2"]
-collision_layer = 0
-
 [node name="Collision" parent="DetectionArea" index="0"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_0ukhw")
