@@ -1,8 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://squehr6q680p"]
+[gd_scene load_steps=11 format=3 uid="uid://squehr6q680p"]
 
 [ext_resource type="PackedScene" uid="uid://bcy8y1he7o1w5" path="res://scenes/enemy/enemy_template.tscn" id="1_lixkb"]
 [ext_resource type="Texture2D" uid="uid://iho5l0x054i7" path="res://assets/enemy/whale/run.png" id="2_tp75f"]
 [ext_resource type="Texture2D" uid="uid://sjgpq0gvwr7l" path="res://assets/enemy/whale/idle.png" id="3_dju62"]
+[ext_resource type="Script" path="res://scripts/enemy/whale/texture.gd" id="3_sohwm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nidb"]
+size = Vector2(62, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ukhw"]
+size = Vector2(450, 40)
 
 [sub_resource type="Animation" id="Animation_pxufy"]
 resource_name = "idle"
@@ -181,13 +188,31 @@ _data = {
 }
 
 [node name="Whale" instance=ExtResource("1_lixkb")]
+speed = 60
+gravity_speed = 350
+proximity_threshhold = 15
+raycast_default_position = -33
 
 [node name="Texture" parent="." index="0"]
 texture = ExtResource("2_tp75f")
 hframes = 44
+script = ExtResource("3_sohwm")
+
+[node name="Collision" parent="." index="1"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_8nidb")
+
+[node name="Collision" parent="DetectionArea" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_0ukhw")
 
 [node name="Animation" parent="." index="5"]
 autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_d0j3h")
 }
+
+[node name="FloorRay" parent="." index="6"]
+position = Vector2(-33, 0)
+target_position = Vector2(0, 30)

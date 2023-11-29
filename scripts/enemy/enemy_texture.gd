@@ -10,7 +10,7 @@ class_name EnemyTexture
 @export var enemy_path: NodePath
 @onready var enemy : CharacterBody2D = get_node(enemy_path)
 
-func animate(_velocity : Vector2) -> void: 
+func animate(velocity) -> void: 
 	pass 
 
 func on_animation_finished(_anim_name: String) -> void:
