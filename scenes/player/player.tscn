@@ -74,6 +74,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AttackArea:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
 
 [sub_resource type="Animation" id="Animation_h6rtc"]
 resource_name = "attack_left"
@@ -138,6 +150,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true, false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AttackArea:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
 
 [sub_resource type="Animation" id="Animation_6ahuf"]
 resource_name = "attack_right"
@@ -201,6 +225,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AttackArea:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_hbusj"]
@@ -483,7 +519,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="AttackArea" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
@@ -517,7 +553,7 @@ one_shot = true
 
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2(-1.5, 12.5)

@@ -64,3 +64,4 @@ func verify_position() -> void:
 		elif direction < 0:
 			texture.flip_h = false 
 			floor_ray.position.x = raycast_default_position
+
