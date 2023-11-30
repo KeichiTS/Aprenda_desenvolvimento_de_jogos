@@ -32,6 +32,7 @@ enemy_path = NodePath("..")
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("4_rc3v1")
+health = 10
 enemy = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
