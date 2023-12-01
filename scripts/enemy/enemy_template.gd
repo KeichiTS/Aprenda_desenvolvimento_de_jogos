@@ -32,7 +32,7 @@ func move_behavior() -> void:
 	if player_ref != null:
 		var distance : Vector2 = player_ref.global_position - global_position
 		var direction: Vector2 = distance.normalized()
-		if abs(distance.x) <= proximity_threshhold:
+		if abs(distance.x) <= proximity_threshold:
 			velocity.x = 0 
 			can_attack = true 
 		elif floor_collision() and not can_attack:

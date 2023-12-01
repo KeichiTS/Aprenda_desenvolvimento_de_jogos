@@ -11,16 +11,12 @@ script = ExtResource("1_ggmpi")
 texture = NodePath("Texture")
 floor_ray = NodePath("FloorRay")
 animation = NodePath("Animation")
-speed = null
-gravity_speed = null
-proximity_threshhold = null
-raycast_default_position = null
 
-[node name="Texture" type="Sprite2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="." node_paths=PackedStringArray("attack_area_collision", "animation", "enemy")]
 script = ExtResource("2_6lvfh")
-attack_area_collision_path = NodePath("../EnemyAttackArea/Collision")
-animation_path = NodePath("../Animation")
-enemy_path = NodePath("..")
+attack_area_collision = NodePath("../CollisionArea/Collision")
+animation = NodePath("../Animation")
+enemy = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
