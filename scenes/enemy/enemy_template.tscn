@@ -11,6 +11,10 @@ script = ExtResource("1_ggmpi")
 texture = NodePath("Texture")
 floor_ray = NodePath("FloorRay")
 animation = NodePath("Animation")
+speed = null
+gravity_speed = null
+proximity_threshhold = null
+raycast_default_position = null
 
 [node name="Texture" type="Sprite2D" parent="."]
 script = ExtResource("2_6lvfh")

@@ -14,7 +14,7 @@ var player_ref : Player = null
 
 @export var speed : int
 @export var gravity_speed : int
-@export var proximity_threshhold : int 
+@export var proximity_threshold : int 
 @export var raycast_default_position : int 
 
 
