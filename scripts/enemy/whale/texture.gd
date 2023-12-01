@@ -1,8 +1,6 @@
 extends EnemyTexture
 class_name WhaleTexture
 
-
-
 func animate(velocity) -> void:
 	if enemy.can_hit or enemy.can_die:
 		action_behavior()
