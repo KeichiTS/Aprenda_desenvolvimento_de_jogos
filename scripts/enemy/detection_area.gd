@@ -1,8 +1,7 @@
 extends Area2D
 class_name DetectionArea
 
-@export var enemy_path : NodePath
-@onready var enemy : CharacterBody2D = get_node(enemy_path)
+@export var enemy : CharacterBody2D
 
 func on_body_entered(body: Player) -> void :
 	enemy.player_ref = body
