@@ -1,6 +1,8 @@
 extends EnemyTexture
 class_name WhaleTexture
 
+
+
 func animate(velocity) -> void:
 	if enemy.can_hit or enemy.can_die:
 		action_behavior()
@@ -27,6 +29,7 @@ func on_animation_finished(anim_name: String) -> void:
 	match anim_name: 
 		'hit':
 			enemy.can_hit = false 
+			print('entrou')
 			enemy.set_physics_process(true)
 		'dead':
 			enemy.kill_enemy()

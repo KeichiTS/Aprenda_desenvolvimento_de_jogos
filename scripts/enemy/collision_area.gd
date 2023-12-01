@@ -16,7 +16,7 @@ func on_collision_area_entered(area):
 func update_health(damage : int) -> void:
 	health -= damage
 	if health <= 0:
-		enemy.can_day = true 
+		enemy.can_die = true 
 		return
 	
 	enemy.can_hit = true 

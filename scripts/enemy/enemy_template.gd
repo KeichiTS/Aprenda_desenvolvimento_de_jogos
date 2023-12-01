@@ -22,7 +22,7 @@ func _physics_process(delta : float) -> void:
 	gravity(delta)
 	move_behavior()
 	verify_position()
-	#texture.animate(velocity)
+	texture.animate(velocity)
 	move_and_slide()
 
 func gravity(delta : float) -> void:
@@ -62,3 +62,7 @@ func verify_position() -> void:
 			texture.flip_h = false 
 			floor_ray.position.x = raycast_default_position
 
+
+
+func _on_animation_finished(anim_name):
+	pass # Replace with function body.
