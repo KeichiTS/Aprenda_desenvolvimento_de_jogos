@@ -11,10 +11,6 @@ var crouching_off: bool = false
 @export var animation : AnimationPlayer
 @export var player : CharacterBody2D
 @export var attack_collision : CollisionShape2D
-#@onready var attack_collision : CollisionShape2D = get_node(attack_collision_path)
-#@onready var animation: AnimationPlayer = get_node(animation_path)
-#@onready var player: CharacterBody2D = get_node(player_path)
-
 
 
 func animate(direction: Vector2) -> void:

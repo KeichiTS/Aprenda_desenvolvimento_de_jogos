@@ -9,7 +9,6 @@ class_name CollisionArea
 
 func on_collision_area_entered(area):
 	if area.get_parent().name == 'Player' and area.name == 'AttackArea':
-		print(area)
 		var player_stats : Node = area.get_parent().get_node('Stats')
 		var player_attack : int = player_stats.base_attack + player_stats.bonus_attack
 		update_health(player_attack)

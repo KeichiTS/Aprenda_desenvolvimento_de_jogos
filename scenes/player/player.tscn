@@ -538,10 +538,10 @@ texture = ExtResource("4_ffa67")
 texture_scale = 0.3
 
 [node name="Animation" type="AnimationPlayer" parent="Light"]
-autoplay = "light_animation"
 libraries = {
 "": SubResource("AnimationLibrary_s50hm")
 }
+autoplay = "light_animation"
 
 [node name="Stats" type="Node" parent="." node_paths=PackedStringArray("invencibility_timer")]
 script = ExtResource("5_b2uxy")

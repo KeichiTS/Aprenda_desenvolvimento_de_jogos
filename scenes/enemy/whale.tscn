@@ -332,10 +332,10 @@ z_index = 1
 shape = SubResource("RectangleShape2D_u6rvy")
 
 [node name="Animation" parent="." index="5"]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_d0j3h")
 }
+autoplay = "idle"
 
 [node name="FloorRay" parent="." index="6"]
 position = Vector2(-33, 0)

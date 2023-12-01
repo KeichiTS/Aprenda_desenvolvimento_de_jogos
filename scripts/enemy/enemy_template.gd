@@ -17,9 +17,6 @@ var player_ref : Player = null
 @export var proximity_threshhold : int 
 @export var raycast_default_position : int 
 
-func _ready():
-	print(floor_ray)
-	print(animation)
 
 func _physics_process(delta : float) -> void:
 	gravity(delta)
