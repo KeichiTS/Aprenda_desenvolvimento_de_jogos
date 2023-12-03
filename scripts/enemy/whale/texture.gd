@@ -4,7 +4,8 @@ class_name WhaleTexture
 func animate(velocity) -> void:
 	if enemy.can_hit or enemy.can_die:
 		action_behavior()
-	move_behavior(velocity)
+	else:
+		move_behavior(velocity)
 	
 	
 func action_behavior() -> void:
