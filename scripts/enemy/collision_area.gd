@@ -15,7 +15,6 @@ func on_collision_area_entered(area):
 		update_health(player_attack)
 		
 func update_health(damage : int) -> void:
-	print('entrou')
 	health -= damage
 	if health <= 0:
 		enemy.can_die = true 

@@ -1,7 +1,7 @@
 extends Node
 class_name PlayerStats
 
-@export var invencibility_timer : Timer
+@export var invincibility_timer : Timer
 var shielding: bool = false
 
 var base_health: int = 15
@@ -37,10 +37,8 @@ var level_dict: Dictionary = {
 	'9': 356
 }
 
-@export var player_path : NodePath
-@onready var player : CharacterBody2D = get_node(player_path)
-@export var collision_area_path : NodePath
-@onready var collision_area : Area2D = get_node(collision_area_path)
+@export var player : CharacterBody2D
+@export var collision_area : Area2D
 
 func _ready() -> void:
 	current_mana = base_mana + bonus_mana
@@ -105,10 +103,11 @@ func _process(delta) -> void:
 
 func on_collision_area_entered(area):
 	if area.name == 'EnemyAttackArea':
+		print('entroU')
 		update_health('Decrease', area.damage)
-		collision_area.set_deferred('monitoring', false)
+		#collision_area.set_deferred('monitoring', false)
 		#aqui precisa ver se está funcionando quando tiver os inimigos
-		invencibility_timer.start(area.invencibility_timer )
+		invincibility_timer.start(area.invincibility_timer)
 
 func on_invencibility_timer_timeout() -> void:
 	collision_area.set_deferred('monitoring', true)

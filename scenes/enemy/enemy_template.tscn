@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcy8y1he7o1w5"]
+[gd_scene load_steps=6 format=3 uid="uid://bcy8y1he7o1w5"]
 
 [ext_resource type="Script" path="res://scripts/enemy/detection_area.gd" id="1_6qtlf"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_template.gd" id="1_ggmpi"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_texture.gd" id="2_6lvfh"]
 [ext_resource type="Script" path="res://scripts/enemy/collision_area.gd" id="4_rc3v1"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_attack_area.gd" id="5_13cw1"]
 
 [node name="EnemyTemplate" type="CharacterBody2D" node_paths=PackedStringArray("texture", "floor_ray", "animation")]
 collision_layer = 8
@@ -42,6 +43,7 @@ enemy = NodePath("..")
 [node name="EnemyAttackArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
+script = ExtResource("5_13cw1")
 
 [node name="Collision" type="CollisionShape2D" parent="EnemyAttackArea"]
 
