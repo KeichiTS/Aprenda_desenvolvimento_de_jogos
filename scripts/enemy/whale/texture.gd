@@ -28,7 +28,9 @@ func on_animation_finished(anim_name: String) -> void:
 	match anim_name: 
 		'hit':
 			enemy.can_hit = false 
-			print('entrou')
 			enemy.set_physics_process(true)
 		'dead':
 			enemy.kill_enemy()
+		'kill' :
+			print('entrou2')
+			enemy.queue_free()

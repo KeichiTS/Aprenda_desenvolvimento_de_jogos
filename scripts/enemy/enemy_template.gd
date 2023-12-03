@@ -63,6 +63,5 @@ func verify_position() -> void:
 			floor_ray.position.x = raycast_default_position
 
 
-
-func _on_animation_finished(anim_name):
-	pass # Replace with function body.
+func kill_enemy() -> void:
+	animation.play('kill')
