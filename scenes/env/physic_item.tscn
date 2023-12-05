@@ -1,18 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2wfxxqakim4v"]
+[gd_scene load_steps=5 format=3 uid="uid://c2wfxxqakim4v"]
 
 [ext_resource type="Texture2D" uid="uid://3d8cthahw0ri" path="res://assets/effect/light.png" id="1_8idf4"]
 [ext_resource type="Script" path="res://scripts/env/physic_item.gd" id="1_ofk7l"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_urk3p"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfm00"]
+radius = 16.0
+
 [node name="PhysicItem" type="RigidBody2D"]
+collision_layer = 0
 script = ExtResource("1_ofk7l")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_urk3p")
 
 [node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_yfm00")
 
 [node name="Notifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

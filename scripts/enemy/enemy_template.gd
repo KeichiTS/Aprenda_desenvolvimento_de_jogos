@@ -91,4 +91,12 @@ func spawn_item_probability() -> void:
 			spawn_physic_item(key, item_texture, item_info)
 		
 func spawn_physic_item(key : String, item_texture : CompressedTexture2D, item_info : Array):
-	pass
+	var physic_item_scene = load('res://scenes/env/physic_item.tscn')
+	var item : PhysicItem = physic_item_scene.instantiate()
+
+
+
+
+	get_tree().root.call_deferred('add_child', item)
+	item.global_position = global_position
+	item.update_item_info(key, item_texture, item_info)

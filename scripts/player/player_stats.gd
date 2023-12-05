@@ -103,7 +103,6 @@ func _process(delta) -> void:
 
 func on_collision_area_entered(area):
 	if area.name == 'EnemyAttackArea':
-		print('entroU')
 		update_health('Decrease', area.damage)
 		#collision_area.set_deferred('monitoring', false)
 		#aqui precisa ver se está funcionando quando tiver os inimigos

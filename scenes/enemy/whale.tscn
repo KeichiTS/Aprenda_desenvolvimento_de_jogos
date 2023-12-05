@@ -487,6 +487,7 @@ shape = SubResource("RectangleShape2D_0ukhw")
 z_index = 1
 z_as_relative = false
 collision_mask = 4
+health = 2
 
 [node name="Collision" parent="CollisionArea" index="0"]
 z_index = 1
