@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name EnemyTemplate
 
-
 @export var texture : Sprite2D
 @export var floor_ray : RayCast2D
 @export var animation : AnimationPlayer
@@ -10,6 +9,7 @@ var can_die: bool = false
 var can_hit: bool = false
 var can_attack: bool = false 
 
+var drop_list : Dictionary
 var player_ref : Player = null 
 
 @export var speed : int
