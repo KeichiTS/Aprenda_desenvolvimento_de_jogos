@@ -9,6 +9,7 @@ var can_die: bool = false
 var can_hit: bool = false
 var can_attack: bool = false 
 
+var drop_bonus : int = 1 
 var drop_list : Dictionary
 var player_ref : Player = null 
 
@@ -65,3 +66,25 @@ func verify_position() -> void:
 
 func kill_enemy() -> void:
 	animation.play('kill')
+	spawn_item_probability()
+	
+func spawn_item_probability() -> void:
+	var random_number: int = randi() % 21
+	if random_number <= 6:
+		drop_bonus = 1
+	elif random_number >= 7 and random_number <= 13:
+		drop_bonus = 2 
+	else:
+		drop_bonus = 3
+	print('multiplicador de drop' + str(drop_bonus))
+	for key in drop_list.keys():
+		var rng : int = randi() % 100 + 1
+		if rng <= drop_list[key][1] * drop_bonus:
+			var item_texture : CompressedTexture2D = load(drop_list[key][0])
+			var item_info : Array = [
+				drop_list[key][0],
+				drop_list[key][2],
+				drop_list[key][3],
+				drop_list[key][4],
+				1
+			]
