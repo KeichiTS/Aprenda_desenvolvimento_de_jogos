@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2wfxxqakim4v"]
+[gd_scene load_steps=3 format=3 uid="uid://c2wfxxqakim4v"]
 
 [ext_resource type="Texture2D" uid="uid://3d8cthahw0ri" path="res://assets/effect/light.png" id="1_8idf4"]
+[ext_resource type="Script" path="res://scripts/env/physic_item.gd" id="1_ofk7l"]
 
 [node name="PhysicItem" type="RigidBody2D"]
+script = ExtResource("1_ofk7l")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
@@ -19,3 +21,7 @@ color = Color(0.00784314, 0.00392157, 0.00392157, 1)
 energy = 0.5
 texture = ExtResource("1_8idf4")
 texture_scale = 0.2
+
+[connection signal="body_entered" from="InteractionArea" to="." method="on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="on_body_exited"]
+[connection signal="screen_exited" from="Notifier2D" to="." method="on_screen_exited"]
