@@ -17,12 +17,10 @@ func _ready() -> void:
 
 func apply_random_impulse() -> void:
 	apply_impulse(
-		Vector2.ZERO,
-		Vector2(
-			randf_range(-30,30),
-			-90
-		)
+		Vector2(randi_range(-30,30), -90),
+		Vector2(0,0)
 	)
+	
 	
 func update_item_info(key : String, texture : CompressedTexture2D, item_info : Array) -> void:
 	await self._ready()
