@@ -386,7 +386,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["res://scenes/effect/dust/dust.tscn", Vector2(0, 18), true],
+"args": ["res://scenes/effect/dust/landing.tscn", Vector2(0, 18), true],
 "method": &"spawn_effect"
 }]
 }

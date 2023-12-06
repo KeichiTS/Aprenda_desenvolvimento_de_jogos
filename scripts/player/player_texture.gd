@@ -42,11 +42,13 @@ func verify_position(direction : Vector2) -> void:
 	if direction.x > 0:
 		flip_h = false
 		suffix = '_right'
+		player.flipped = false 
 		player.direction = -1
 		position = Vector2.ZERO
 		player.wall_ray.target_position = Vector2(10.5,0)
 	elif direction.x < 0: 
 		suffix = '_left'
+		player.flipped = true
 		player.direction = 1
 		flip_h = true
 		position = Vector2( -2, 0 )

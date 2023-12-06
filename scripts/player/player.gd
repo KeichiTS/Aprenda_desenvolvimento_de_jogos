@@ -16,6 +16,7 @@ var attacking: bool = false
 var defending: bool = false 
 var crouching: bool = false 
 
+var flipped : bool = false 
 var not_on_wall: bool = true
 var can_track_input: bool = true
 
@@ -51,6 +52,7 @@ func vertival_movement_env() -> void:
 	var jump_condition : bool = can_track_input and not attacking
 	if Input.is_action_just_pressed('ui_select') and jump_count < 2 and jump_condition:
 		jump_count += 1 
+		spawn_effect('res://scenes/effect/dust/jump.tscn', Vector2(0,18), flipped)
 		if next_to_wall() and not is_on_floor():
 			velocity.y = wall_jump_speed
 			velocity.x += wall_impulse_speed * direction

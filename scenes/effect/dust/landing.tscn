@@ -1,26 +1,26 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhtsk7tkssgn1"]
 
-[ext_resource type="PackedScene" uid="uid://dx3pc28pfntpt" path="res://scenes/effect/effect_template.tscn" id="1_cqocx"]
-[ext_resource type="Texture2D" uid="uid://ccwkne4nhb33q" path="res://assets/effect/dust/dust_particles.png" id="2_h2d55"]
+[ext_resource type="PackedScene" uid="uid://dx3pc28pfntpt" path="res://scenes/effect/effect_template.tscn" id="1_lvofl"]
+[ext_resource type="Texture2D" uid="uid://ccwkne4nhb33q" path="res://assets/effect/dust/dust_particles.png" id="2_1ywqn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fjay"]
-atlas = ExtResource("2_h2d55")
+atlas = ExtResource("2_1ywqn")
 region = Rect2(0, 0, 52, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3bhh"]
-atlas = ExtResource("2_h2d55")
+atlas = ExtResource("2_1ywqn")
 region = Rect2(52, 0, 52, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vsj67"]
-atlas = ExtResource("2_h2d55")
+atlas = ExtResource("2_1ywqn")
 region = Rect2(104, 0, 52, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slmk1"]
-atlas = ExtResource("2_h2d55")
+atlas = ExtResource("2_1ywqn")
 region = Rect2(156, 0, 52, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fpg6"]
-atlas = ExtResource("2_h2d55")
+atlas = ExtResource("2_1ywqn")
 region = Rect2(208, 0, 52, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u74sx"]
@@ -46,7 +46,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="DustEffect" instance=ExtResource("1_cqocx")]
+[node name="DustEffect" instance=ExtResource("1_lvofl")]
 position = Vector2(248, 120)
 sprite_frames = SubResource("SpriteFrames_u74sx")
 animation = &"idle"
