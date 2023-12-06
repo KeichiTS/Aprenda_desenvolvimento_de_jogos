@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 class_name EffectTemplate
 
 func play_effect() -> void:
+	print('isso_aqui, ele fez')
 	play()
 
 

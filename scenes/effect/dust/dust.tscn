@@ -50,5 +50,3 @@ animations = [{
 position = Vector2(248, 120)
 sprite_frames = SubResource("SpriteFrames_u74sx")
 animation = &"idle"
-frame = 4
-frame_progress = 1.0

@@ -82,6 +82,16 @@ func next_to_wall() -> bool:
 	else:
 		not_on_wall = true
 		return false
+		
+func spawn_effect(effect_path : String, offset : Vector2, is_flipped : bool) -> void:
+	var effect_instance : EffectTemplate = load(effect_path).instantiate()
+	get_tree().root.call_deferred('add_child', effect_instance)
+	if is_flipped:
+		effect_instance.flip_h = true 
+	
+	effect_instance.global_position = global_position + offset
+	effect_instance.play_effect()
+	
 func attack() -> void:
 	var attack_condition: bool = not attacking and not crouching and not defending
 	if Input.is_action_just_pressed('attack') and attack_condition and is_on_floor():
