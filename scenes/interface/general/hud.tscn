@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmcpcs4awkkm"]
+
+[ext_resource type="PackedScene" uid="uid://meodt3ylmecm" path="res://scenes/interface/player/stats/bar_container.tscn" id="1_ky38j"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="BarContainer" parent="." instance=ExtResource("1_ky38j")]

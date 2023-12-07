@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://meodt3ylmecm"]
+
+[ext_resource type="Texture2D" uid="uid://cubrcxcpq8767" path="res://assets/interface/stats/bar/health_bar_background.png" id="1_xd7tp"]
+[ext_resource type="Texture2D" uid="uid://cehhm5xkmtx5" path="res://assets/interface/stats/bar/health_bar.png" id="2_jtor3"]
+[ext_resource type="Texture2D" uid="uid://cx26ya4d7l5ne" path="res://assets/interface/stats/bar/exp_bar_background.png" id="3_qmqy6"]
+[ext_resource type="Texture2D" uid="uid://c23t6kmcobfs1" path="res://assets/interface/stats/bar/exp_bar.png" id="4_015dk"]
+[ext_resource type="Texture2D" uid="uid://bekerlk4ivhpv" path="res://assets/interface/stats/bar/mana_bar_background.png" id="4_xfcrp"]
+[ext_resource type="Texture2D" uid="uid://bqn16lynlrm76" path="res://assets/interface/stats/bar/mana_bar.png" id="6_yu2pf"]
+
+[node name="BarContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBarBackground" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 22.0
+texture = ExtResource("1_xd7tp")
+stretch_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthBarBackground"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 9.0
+value = 100.0
+texture_progress = ExtResource("2_jtor3")
+
+[node name="ExpBarBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("3_qmqy6")
+stretch_mode = 2
+
+[node name="ExpBar" type="TextureProgressBar" parent="ExpBarBackground"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 9.0
+value = 100.0
+texture_progress = ExtResource("4_015dk")
+
+[node name="ManaBarBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 55.0
+offset_bottom = 40.0
+texture = ExtResource("4_xfcrp")
+stretch_mode = 2
+
+[node name="ManaBar" type="TextureProgressBar" parent="ManaBarBackground"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 8.0
+value = 100.0
+texture_progress = ExtResource("6_yu2pf")
