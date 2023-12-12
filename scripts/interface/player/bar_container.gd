@@ -55,7 +55,7 @@ func update_bar(type : String, value : int) -> void:
 			call_tween(exp_bar, current_exp, value)
 			current_exp = value
 
-			
+###ESTA VERSÃO FUNCIONA APENAS NO GODOT 3. AS MODIFICAÇÕES SÃO FEITAS NA FUNÇÃO ABAIXO.
 #func call_tween(bar : TextureProgressBar, initial_value : int, final_value) -> void:
 	#var _interpolate_value : bool = tween.inrpolate_property(
 		#bar, 
@@ -69,7 +69,15 @@ func update_bar(type : String, value : int) -> void:
 	#
 	#var _start: bool = tween.start()
 	
+func reset_exp_bar(max_exp : int, value : int) -> void:
+	exp_bar.max_value = max_exp
+	exp_bar.value = value
+	current_exp = value
+	
+	call_tween(exp_bar, 0, current_exp)
+
+
+
 func call_tween(bar: TextureProgressBar, initial_value: int, final_value: int) -> void:
 	var tween = create_tween()
-	#var tween = Tween.new()
-	tween.tween_property(bar, "value", final_value, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(bar, "value", final_value, .2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
