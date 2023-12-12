@@ -12,7 +12,7 @@ var current_mana : int
 var current_health : int
 
 func init_bar(health: int, mana : int, max_exp_value : int) -> void:
-	exp_bar.max_value = max_exp_value
+	exp_bar.max_exp_value = max_exp_value
 	health_bar.value = health
 	mana_bar.max_value = mana
 	
