@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bekerlk4ivhpv" path="res://assets/interface/stats/bar/mana_bar_background.png" id="4_xfcrp"]
 [ext_resource type="Texture2D" uid="uid://bqn16lynlrm76" path="res://assets/interface/stats/bar/mana_bar.png" id="6_yu2pf"]
 
-[node name="BarContainer" type="Control" groups=["bar_container"]]
+[node name="BarContainer" type="Control" node_paths=PackedStringArray("health_bar", "mana_bar", "exp_bar") groups=["bar_container"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xw527")
+health_bar = NodePath("HealthBarBackground/HealthBar")
+mana_bar = NodePath("ManaBarBackground/ManaBar")
+exp_bar = NodePath("ExpBarBackground/ExpBar")
 
 [node name="HealthBarBackground" type="TextureRect" parent="."]
 layout_mode = 1

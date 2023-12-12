@@ -3,17 +3,21 @@ class_name BarContainer
 
 #@onready var tween: Tween
 
-@onready var health_bar : TextureProgressBar = get_node('HealthBarBackground/HealthBar')
-@onready var mana_bar : TextureProgressBar = get_node('ManaBarBackground/ManaBar')
-@onready var exp_bar : TextureProgressBar = get_node('ExpBarBackground/ExpBar')
+#@onready var health_bar : TextureProgressBar = get_node('HealthBarBackground/HealthBar')
+#@onready var mana_bar : TextureProgressBar = get_node('ManaBarBackground/ManaBar')
+#@onready var exp_bar : TextureProgressBar = get_node('ExpBarBackground/ExpBar')
+
+@export var health_bar : TextureProgressBar
+@export var mana_bar : TextureProgressBar
+@export var exp_bar : TextureProgressBar
 
 var current_exp : int
 var current_mana : int
 var current_health : int
 
 func init_bar(health: int, mana : int, max_exp_value : int) -> void:
-	exp_bar.max_exp_value = max_exp_value
-	health_bar.value = health
+	exp_bar.max_value = max_exp_value
+	health_bar.max_value = health
 	mana_bar.max_value = mana
 	
 	health_bar.value = health
