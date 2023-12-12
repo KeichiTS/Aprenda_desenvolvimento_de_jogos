@@ -465,6 +465,7 @@ _data = {
 [node name="Whale" instance=ExtResource("1_lixkb")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_cwp5a")
+enemy_exp = 30
 speed = 60
 gravity_speed = 350
 proximity_threshold = 15

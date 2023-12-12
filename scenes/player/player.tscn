@@ -633,7 +633,7 @@ libraries = {
 }
 autoplay = "light_animation"
 
-[node name="Stats" type="Node" parent="." node_paths=PackedStringArray("invincibility_timer", "player", "collision_area")]
+[node name="Stats" type="Node" parent="." node_paths=PackedStringArray("invincibility_timer", "player", "collision_area") groups=["player_stats"]]
 script = ExtResource("5_b2uxy")
 invincibility_timer = NodePath("InvencibilityTimer")
 player = NodePath("..")

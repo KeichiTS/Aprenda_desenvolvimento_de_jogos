@@ -13,6 +13,7 @@ var drop_bonus : int = 1
 var drop_list : Dictionary
 var player_ref : Player = null 
 
+@export var enemy_exp : int
 @export var speed : int
 @export var gravity_speed : int
 @export var proximity_threshold : int 
@@ -66,6 +67,7 @@ func verify_position() -> void:
 
 func kill_enemy() -> void:
 	animation.play('kill')
+	get_tree().call_group('player_stats', 'update_exp', enemy_exp)
 	spawn_item_probability()
 	
 func spawn_item_probability() -> void:
@@ -76,7 +78,6 @@ func spawn_item_probability() -> void:
 		drop_bonus = 2 
 	else:
 		drop_bonus = 3
-	print('multiplicador de drop' + str(drop_bonus))
 	for key in drop_list.keys():
 		var rng : int = randi() % 100 + 1
 		if rng <= drop_list[key][1] * drop_bonus:

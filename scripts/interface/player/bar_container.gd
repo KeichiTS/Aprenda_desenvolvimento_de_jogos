@@ -53,7 +53,8 @@ func update_bar(type : String, value : int) -> void:
 
 		'ExpBar':
 			call_tween(exp_bar, current_exp, value)
-			current_exp = value 
+			current_exp = value
+
 			
 #func call_tween(bar : TextureProgressBar, initial_value : int, final_value) -> void:
 	#var _interpolate_value : bool = tween.inrpolate_property(
@@ -69,8 +70,6 @@ func update_bar(type : String, value : int) -> void:
 	#var _start: bool = tween.start()
 	
 func call_tween(bar: TextureProgressBar, initial_value: int, final_value: int) -> void:
-	var tween = Tween.new()
-	tween.interpolate_property(bar, "value", initial_value, final_value, 0.2)
-	tween.set_transition(Tween.TRANS_QUAD)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.start()
+	var tween = create_tween()
+	#var tween = Tween.new()
+	tween.tween_property(bar, "value", final_value, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
