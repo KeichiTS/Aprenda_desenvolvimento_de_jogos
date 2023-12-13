@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy7q48qacpyf7"]
+
+[ext_resource type="PackedScene" uid="uid://cylgj1n0qlihx" path="res://scenes/effect/fireball/fire_ball_1.tscn" id="1_fk2or"]
+[ext_resource type="Texture2D" uid="uid://bbcyax8kbx2hr" path="res://assets/effect/fireball/fire_ball_2.png" id="2_8x8jo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mmmwu"]
+particles_animation = true
+particles_anim_h_frames = 45
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_5tpvf"]
+_data = [Vector2(0, 0.450549), 0.0, 0.0, 0, 0, Vector2(0.46875, 0.791209), 0.0, 0.0, 0, 0, Vector2(1, 0.164835), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wa7ma"]
+curve = SubResource("Curve_5tpvf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vooj0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 1)
+angle_min = -90.0
+angle_max = -90.0
+spread = 0.0
+gravity = Vector3(0, 60, 0)
+scale_curve = SubResource("CurveTexture_wa7ma")
+anim_speed_min = 3.0
+anim_speed_max = 3.0
+
+[node name="FireBall2" instance=ExtResource("1_fk2or")]
+material = SubResource("CanvasItemMaterial_mmmwu")
+process_material = SubResource("ParticleProcessMaterial_vooj0")
+texture = ExtResource("2_8x8jo")
