@@ -26,6 +26,7 @@ var can_track_input: bool = true
 
 @export var wall_gravity : int 
 @export var player_gravity : int
+@export var magic_attack_cost : int
 @export var wall_impulse_speed : int
 
 func _physics_process(delta: float):
@@ -95,10 +96,14 @@ func spawn_effect(effect_path : String, offset : Vector2, is_flipped : bool) -> 
 	effect_instance.play_effect()
 	
 func attack() -> void:
-	var attack_condition: bool = not attacking and not crouching and not defending
-	if Input.is_action_just_pressed('attack') and attack_condition and is_on_floor():
+	var attack_condition: bool = not attacking and not crouching and not defending and is_on_floor()
+	if Input.is_action_just_pressed('attack') and attack_condition :
 		attacking = true 
 		player_sprite.normal_attack = true
+	elif Input.is_action_just_pressed('magic_attack') and attack_condition and stats.current_mana >= magic_attack_cost:
+		attacking = true 
+		player_sprite.magic_attack = true 
+		stats.update_mana('Decrease', magic_attack_cost)
 	
 func crouch() -> void:
 	if Input.is_action_pressed('crouch') and is_on_floor() and not defending:
